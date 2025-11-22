@@ -20,6 +20,9 @@ from app_1 import views as app_1_views
 from app_1 import urls as app_1_urls
 
 urlpatterns = [
+    # path('indexblah/', )
     path('admin/', admin.site.urls),
     path('', include(app_1_urls), name='app_1_urls'),
+    path('summernote/', include('django_summernote.urls')),
+    
 ]
