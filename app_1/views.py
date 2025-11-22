@@ -23,3 +23,8 @@ def index(request):
 #         }
 #     )
 
+class PostList(generic.ListView):
+
+    template_name = "app_1/index.html"
+    # paginate_by = 6
+    queryset = Post.objects.filter(status=0)

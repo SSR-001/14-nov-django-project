@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 <!-- {% load static %} -->
 {% block content %}
+
 {% for post in post_list %}
-hello
+
+<u>{{ post.title }}</u>
+{{ post.content | safe }}
+<!-- {{ post.excerpt }} -->
+<br><br>
+
 {% endfor %}
 {% endblock %}
