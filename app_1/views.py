@@ -28,3 +28,9 @@ class PostList(generic.ListView):
     template_name = "app_1/index.html"
     # paginate_by = 6
     queryset = Post.objects.filter(status=0)
+
+class PostList2(generic.ListView):
+
+    template_name = "app_1/index_2.html"
+    # paginate_by = 6
+    queryset = Post.objects.filter(status=0)

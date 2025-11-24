@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 <!-- {% load static %} -->
 {% block content %}
-<title>Blog</title>
+<title>Vague Enthusiasms</title>
 {% for post in post_list %}
-{% if post.private == 1 %}
+{% if post.private == 0 %}
 <u>{{ post.title }}</u>
+<br>
+{{ post.created_on}}
 {{ post.content | safe }}
 <br><br>
 {% endif %}
