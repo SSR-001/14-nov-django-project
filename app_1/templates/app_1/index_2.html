@@ -1,15 +1,34 @@
 {% extends "base.html" %}
-<!-- {% load static %} -->
+{% load static %}
 {% block content %}
-<title>Vague Enthusiasms</title>
+{% comment %} <title>Vague Enthusiasms</title> {% endcomment %}
+Title Here <br>
+<a href="#" class="btn btn-primary">New Post</a>
+<div class="container-fluid">
+<div class="row">
 {% for post in post_list %}
 {% if post.private == 0 %}
-<u>{{ post.title }}</u>
-<br>
-{{ post.created_on}}
-{{ post.content | safe }}
+<div class ="col-md-4">
+<div class="card mb-4" style="width: 18rem;">
+    {% comment %} <img src="..." class="card-img-top" alt="..."> {% endcomment %}
+    <div class="card-body">
+        <h5 class="card-title"><u>{{ post.title }}</u></h5>
+        <p class="card-text">{{ post.created_on }}</p>
+        <p class="card-text">{{ post.content | safe }}</p>
+        <a href="#" class="btn btn-primary">Edit</a>
+{% comment %} {{ post.created_on}} {% endcomment %}
+
+    </div>
+    </div>
+    {% if forloop.counter|divisibleby:3 %}
+</div>
+<div class="row">
+    {% endif %}
+</div>
+
 <br><br>
 {% endif %}
 
 {% endfor %}
+</div> <!-- container div -->
 {% endblock %}
